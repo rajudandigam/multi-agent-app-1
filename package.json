@@ -11,6 +11,6 @@
   "description": "",
   "type": "module",
   "dependencies": {
-    "agent-inspect": "file:../agent-inspect/agent-inspect-0.1.0.tgz"
+    "agent-inspect": "^0.1.0"
   }
 }
