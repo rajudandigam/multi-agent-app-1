@@ -1,0 +1,11 @@
+{"event":"proactive.job.started","jobId":"local-test-job-01","userUuid":"f0769fd4-1234-5678-9abc-abcdef000001","decisionId":"local_run_01","timestamp":1746451218130}
+{"event":"proactive.agent.started","trips":1,"decisionId":"local_run_01","timestamp":1746451218132}
+{"event":"proactive.tool.conversation_history_fetched","tripUuid":"89e28415-9999-8888-7777-abcdef000002","messageCount":7,"decisionId":"local_run_01","timestamp":1746451218200}
+{"event":"proactive.llm.generate_message","model":"fixture-model-x","decisionId":"local_run_01","timestamp":1746451218400}
+{"event":"proactive.llm.generate_message_completed","tokens":{"input":420,"output":118},"decisionId":"local_run_01","timestamp":1746451218812,"durationMs":412}
+{"event":"proactive.result.notification","shouldNotify":true,"variant":"local_variant_a","decisionId":"local_run_01","timestamp":1746451218900}
+{"event":"proactive.job.started","jobId":"local-test-job-02","userUuid":"f0769fd4-1234-5678-9abc-abcdef000003","decisionId":"local_run_02","timestamp":1746451220000}
+{"event":"proactive.agent.started","trips":1,"decisionId":"local_run_02","timestamp":1746451220005}
+{"event":"proactive.tool.conversation_history_fetched","tripUuid":"89e28415-9999-8888-7777-abcdef000004","messageCount":12,"decisionId":"local_run_02","timestamp":1746451220080}
+{"event":"proactive.llm.generate_message","model":"fixture-model-x","decisionId":"local_run_02","timestamp":1746451220200}
+{"event":"proactive.llm.generate_message.failed","error":"upstream timeout","decisionId":"local_run_02","timestamp":1746451220900,"durationMs":700}

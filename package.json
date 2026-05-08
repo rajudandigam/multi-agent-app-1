@@ -2,15 +2,31 @@
   "name": "multi-agent-app-1",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "type": "module",
+  "license": "ISC",
+  "description": "Local consumer / manual-test app for AgentInspect",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check:import": "node import-check.mjs",
+    "agent:basic": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node basic-agent.mjs",
+    "agent:nested": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node nested-agent.mjs",
+    "agent:parallel": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node parallel-agent.mjs",
+    "agent:error": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node error-agent.mjs",
+    "agent:observe": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node observe-agent.mjs",
+    "agent:silent": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node silent-agent.mjs",
+    "agent:all": "npm run check:import && npm run agent:basic && npm run agent:nested && npm run agent:parallel && npm run agent:error && npm run agent:observe && npm run agent:silent",
+    "inspect:list": "npx agent-inspect list --dir ./.agent-inspect-runs",
+    "inspect:list:json": "npx agent-inspect list --dir ./.agent-inspect-runs --json",
+    "inspect:list:error": "npx agent-inspect list --dir ./.agent-inspect-runs --status error",
+    "inspect:list:success": "npx agent-inspect list --dir ./.agent-inspect-runs --status success",
+    "inspect:clean:dry": "npx agent-inspect clean --dir ./.agent-inspect-runs --keep 20 --dry-run",
+    "logs:inspect": "npx agent-inspect logs logs/proactive-json.log --format json --config logs/agent-inspect.logs.json",
+    "logs:tail:once": "npx agent-inspect tail --file logs/proactive-json.log --format json --config logs/agent-inspect.logs.json --once",
+    "logs:inspect:json": "npx agent-inspect logs logs/proactive-json.log --format json --config logs/agent-inspect.logs.json --json",
+    "server": "AGENT_INSPECT_TRACE_DIR=./.agent-inspect-runs node server.mjs",
+    "manual:test": "npm run agent:all && npm run inspect:list && npm run inspect:list:json && npm run inspect:list:error && npm run inspect:list:success && npm run inspect:clean:dry"
+  },
   "dependencies": {
-    "agent-inspect": "^0.1.0"
+    "agent-inspect": "file:../agent-inspect/agent-inspect-1.0.0.tgz"
   }
 }

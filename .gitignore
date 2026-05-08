@@ -2,13 +2,20 @@
 node_modules/
 
 # Logs
-logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+
+# Keep committed log fixtures used for AgentInspect logs/tail tests
+!logs/proactive-json.log
+!logs/agent-inspect.logs.json
+
+# AgentInspect manual test artifacts
+.agent-inspect-runs/
+agent-inspect-manual-test-report.md
 
 # Environment and secrets
 .env
